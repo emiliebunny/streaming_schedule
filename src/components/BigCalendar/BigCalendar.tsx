@@ -1,0 +1,25 @@
+import { Calendar, dayjsLocalizer } from "react-big-calendar";
+import dayjs from "dayjs";
+
+import { Event } from "react-big-calendar";
+export { type Event } from "react-big-calendar";
+
+import 'react-big-calendar/lib/css/react-big-calendar.css';
+
+const localizer = dayjsLocalizer(dayjs);
+
+type Props = {
+  data: Event[];
+};
+
+export default function BigCalendar({ data }: Props) {
+  return (
+    <Calendar
+      localizer={localizer}
+      events={data}
+      startAccessor="start"
+      endAccessor="end"
+      style={{ height: 500 }}
+    />
+  );
+}

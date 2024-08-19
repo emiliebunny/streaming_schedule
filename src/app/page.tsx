@@ -1,52 +1,52 @@
+'use client';
+
 import Image from "next/image";
 import { Schedule } from "@/types/Schedule";
-import { Calendar, dayjsLocalizer } from "react-big-calendar";
-import dayjs from "dayjs";
 
-const sample_data: Schedule[] = [
+import { BigCalendar, Event } from "@/components/BigCalendar";
+
+const sample_data: Event[] = [
   {
     title: "Streaming",
-    start: "2024-08-14T16:45:00+07:00",
-    end: "2024-08-14T22:45:00+07:00",
+    start: new Date("2024-08-14T16:45:00+07:00"),
+    end: new Date("2024-08-14T22:45:00+07:00"),
   },
   {
     title: "Streaming",
-    start: "2024-08-15T16:45:00+07:00",
-    end: "2024-08-15T22:45:00+07:00",
+    start: new Date("2024-08-15T16:45:00+07:00"),
+    end: new Date("2024-08-15T22:45:00+07:00"),
   },
   {
     title: "Streaming",
-    start: "2024-08-16T16:45:00+07:00",
-    end: "2024-08-16T22:45:00+07:00",
+    start: new Date("2024-08-16T16:45:00+07:00"),
+    end: new Date("2024-08-16T22:45:00+07:00"),
   },
   {
     title: "Streaming",
-    start: "2024-08-17T16:45:00+07:00",
-    end: "2024-08-17T22:45:00+07:00",
+    start: new Date("2024-08-17T16:45:00+07:00"),
+    end: new Date("2024-08-17T22:45:00+07:00"),
   },
   {
     title: "Streaming",
-    start: "2024-08-18T16:45:00+07:00",
-    end: "2024-08-18T22:45:00+07:00",
+    start: new Date("2024-08-18T16:45:00+07:00"),
+    end: new Date("2024-08-18T22:45:00+07:00"),
   },
   {
     title: "Streaming",
-    start: "2024-08-19T16:45:00+07:00",
-    end: "2024-08-19T22:45:00+07:00",
+    start: new Date("2024-08-19T16:45:00+07:00"),
+    end: new Date("2024-08-19T22:45:00+07:00"),
   },
   {
     title: "Streaming",
-    start: "2024-08-20T16:45:00+07:00",
-    end: "2024-08-20T22:45:00+07:00",
+    start: new Date("2024-08-20T16:45:00+07:00"),
+    end: new Date("2024-08-20T22:45:00+07:00"),
   },
   {
     title: "Streaming",
-    start: "2024-08-21T16:45:00+07:00",
-    end: "2024-08-21T22:45:00+07:00",
+    start: new Date("2024-08-21T16:45:00+07:00"),
+    end: new Date("2024-08-21T22:45:00+07:00"),
   },
 ];
-
-const localizer = dayjsLocalizer(dayjs);
 
 export default function Home() {
   return (
@@ -77,13 +77,7 @@ export default function Home() {
       </div>
 
       <div className="py-2">
-        <Calendar
-          localizer={localizer}
-          events={myEventsList}
-          startAccessor="start"
-          endAccessor="end"
-          style={{ height: 500 }}
-        />
+        <BigCalendar data={sample_data} />
       </div>
 
       <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
