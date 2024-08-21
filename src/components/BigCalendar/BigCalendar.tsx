@@ -1,4 +1,4 @@
-import { Calendar, dayjsLocalizer } from "react-big-calendar";
+import { Calendar, Views, dayjsLocalizer } from "react-big-calendar";
 import dayjs from "dayjs";
 
 import { Event } from "react-big-calendar";
@@ -15,11 +15,12 @@ type Props = {
 export default function BigCalendar({ data }: Props) {
   return (
     <Calendar
+      defaultView={Views.WEEK}
       localizer={localizer}
       events={data}
       startAccessor="start"
       endAccessor="end"
-      style={{ height: 500 }}
+      style={{ height: 800 }}
     />
   );
 }
